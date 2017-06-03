@@ -1,0 +1,47 @@
+keyboard /dev/input/by-id/usb-Razer_Razer_Naga_Chroma-if02-event-kbd as naga
+
+alias (naga 1) as naga_1
+alias (naga 2) as naga_2
+alias (naga 3) as naga_3
+alias (naga 4) as naga_4
+alias (naga 5) as naga_5
+alias (naga 6) as naga_6
+alias (naga 7) as naga_7
+alias (naga 8) as naga_8
+alias (naga 9) as naga_9
+alias (naga 0) as naga_10
+alias (naga -) as naga_11
+alias (naga =) as naga_12
+
+macro ctrl_c{
+    mouse click 1
+    sleep 10
+    mouse click 1
+    sleep 10
+    mouse click 1
+    sleep 10
+    key press LEFTCTRL
+    key press c
+    key release c
+    key release LEFTCTRL
+}
+
+macro save_picture {
+    mouse click 2
+    sleep 10
+    key click v
+    sleep 100
+    key click ENTER
+}
+
+macro dot_p {
+    print "Go,j,p"
+}
+
+profile Naga_1 {
+    bind <naga_1> do key click PAGEUP
+    bind <naga_4> do key click PAGEDOWN
+    bind <naga_2> do play save_picture
+}
+
+select Naga_1
